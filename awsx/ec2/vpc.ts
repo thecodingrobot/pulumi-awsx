@@ -159,6 +159,7 @@ export class Vpc extends schema.Vpc<VpcData> {
               availabilityZone: spec.azName,
               mapPublicIpOnLaunch: spec.type.toLowerCase() === "public",
               cidrBlock: spec.cidrBlock,
+              assignIpv6AddressOnCreation: spec.type.toLowerCase() === "public" && args.assignGeneratedIpv6CidrBlock,
               tags: {
                 Name: spec.subnetName,
               },
